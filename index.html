@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#102253">
+<title>Piosenka na zamówienie na prezent | Podaruj Nutę</title>
+<meta name="description" content="Personalizowana piosenka z Waszej historii na urodziny, rocznicę, ślub lub podziękowanie. Pakiet Start 49 zł, gotowa do 24 godzin od opłacenia.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="img/nuta-640.webp" imagesrcset="img/nuta-420.webp 420w, img/nuta-640.webp 640w" imagesizes="(max-width: 899px) 300px, 640px" fetchpriority="high">
+<style>
+@font-face{font-family:Outfit;font-style:normal;font-weight:400 800;font-display:swap;src:url(fonts/outfit-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Outfit;font-style:normal;font-weight:400 800;font-display:swap;src:url(fonts/outfit-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
+:root{--navy:#102253;--deep:#101F4A;--blue:#2149BA;--yellow:#FFD74D;--yellow2:#FFC81F;--ink:#152B53;--muted:#55627A;--grey:#F2F4F8;--line:#DCE3EE;--white:#fff;--hh:64px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:Outfit,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:17px;line-height:1.6;color:var(--ink);background:#fff;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{line-height:1.12;margin:0;color:var(--navy);font-weight:700;letter-spacing:-.015em}
+h2{font-size:clamp(30px,3.6vw,48px)}
+h3{font-size:21px}
+p{margin:0}
+.wrap{width:min(1240px,100% - 2*clamp(16px,4vw,56px));margin-inline:auto}
+.skip{position:absolute;left:-999px;top:8px;background:var(--navy);color:#fff;padding:8px 14px;z-index:100;border-radius:6px}
+.skip:focus{left:8px}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+
+/* przycisk */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:54px;padding:0 26px 0 30px;border-radius:30px;background:var(--yellow);color:var(--navy);font:700 17px/1 Outfit,sans-serif;text-decoration:none;border:0;cursor:pointer;transition:background .2s,transform .2s;box-shadow:0 10px 26px rgba(16,34,83,.16)}
+.btn:hover{background:var(--yellow2);transform:translateY(-1px)}
+.btn .glowka{width:14px;height:10px;border-radius:50%;background:var(--navy);transform:rotate(-22deg);flex:none}
+.btn.navy{background:var(--navy);color:#fff}
+.btn.navy .glowka{background:var(--yellow)}
+.btn.navy:hover{background:var(--blue)}
+
+/* nagłówek */
+.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:saturate(1.4) blur(8px);transition:box-shadow .2s}
+.top.cien{box-shadow:0 1px 0 var(--line)}
+.top .wrap{height:var(--hh);display:flex;align-items:center;gap:28px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-size:23px;font-weight:500;color:var(--navy);letter-spacing:-.01em;white-space:nowrap}
+.logo b{font-weight:800}
+.logo svg{width:30px;height:34px;flex:none}
+.menu{display:flex;gap:30px;margin-left:auto}
+.menu a{text-decoration:none;font-weight:500;font-size:16px;color:var(--ink);padding:6px 0;position:relative}
+.menu a::after{content:"";position:absolute;left:50%;bottom:-2px;width:10px;height:7px;border-radius:50%;background:var(--yellow);transform:translateX(-50%) rotate(-22deg) scale(0);transition:transform .2s}
+.menu a:hover::after,.menu a.akt::after{transform:translateX(-50%) rotate(-22deg) scale(1)}
+.menu .btn-menu{display:none}
+.top .btn{min-height:44px;padding:0 20px 0 22px;font-size:15px;box-shadow:none}
+.burger{display:none;margin-left:auto;width:46px;height:46px;border:0;background:none;cursor:pointer;padding:11px;border-radius:10px}
+.burger span{display:block;height:2.5px;background:var(--navy);border-radius:2px;margin:5px 0;transition:transform .25s,opacity .2s}
+.burger[aria-expanded=true] span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.burger[aria-expanded=true] span:nth-child(2){opacity:0}
+.burger[aria-expanded=true] span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+
+/* pierwszy ekran */
+.hero{position:relative;min-height:calc(100svh - var(--hh));display:flex;align-items:center;overflow:hidden;background:#fff}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:40px;padding:32px 0}
+.hero-txt{position:relative;z-index:2;max-width:590px}
+.hero h1{font-size:clamp(40px,4.6vw,70px);line-height:1.04;letter-spacing:-.025em}
+.hero .lead{margin-top:24px;font-size:clamp(18px,1.35vw,21px);color:var(--muted);max-width:520px}
+.hero .cta{margin-top:34px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px}
+.hero .info{font-size:16px;color:var(--muted);line-height:1.4}
+.hero .info b{color:var(--navy);font-weight:700}
+.scena{position:relative;justify-self:center;height:min(calc(100svh - var(--hh) - 90px),790px);aspect-ratio:640/790;max-width:100%}
+.scena img{width:100%;height:100%;object-fit:cover;clip-path:ellipse(49.6% 49.6% at 50% 50%);position:relative;z-index:2}
+.scena .laska{position:absolute;z-index:3;left:calc(100% - 9px);bottom:50%;height:52%;width:36%;overflow:visible;pointer-events:none}
+.pieciolinia{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);height:var(--ph,200px);pointer-events:none;z-index:1}
+.pieciolinia i{position:absolute;left:0;right:0;height:1.5px;background:rgba(16,34,83,.11)}
+.pieciolinia i:nth-child(1){top:0}.pieciolinia i:nth-child(2){top:25%}.pieciolinia i:nth-child(3){top:50%}.pieciolinia i:nth-child(4){top:75%}.pieciolinia i:nth-child(5){top:100%}
+.hero .pieciolinia{left:46%;--ph:min(34svh,300px)}
+
+/* sekcje */
+section{position:relative}
+.sek{padding:clamp(72px,9vw,128px) 0}
+.szara{background:var(--grey)}
+.glowa{max-width:760px}
+.glowa p{margin-top:18px;font-size:clamp(17px,1.3vw,20px);color:var(--muted)}
+
+/* melodia: kroki */
+.melodia{position:relative;margin-top:clamp(48px,6vw,88px)}
+.melodia .pieciolinia{--ph:220px;top:46%}
+.kroki{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2vw,32px);list-style:none;margin:0;padding:0}
+.krok{display:flex;flex-direction:column}
+.krok:nth-child(1){margin-top:96px}.krok:nth-child(2){margin-top:64px}.krok:nth-child(3){margin-top:32px}.krok:nth-child(4){margin-top:0}
+.krok button{all:unset;cursor:zoom-in;display:block;border-radius:22px;overflow:hidden;box-shadow:0 18px 40px rgba(16,34,83,.16);aspect-ratio:720/850;background:#2a2147;transition:transform .25s}
+.krok button:hover{transform:translateY(-4px)}
+.krok button:focus-visible{outline:3px solid var(--blue);outline-offset:4px}
+.krok img{width:100%;height:100%;object-fit:cover}
+.krok .opis{padding:22px 4px 0;display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:start}
+.krok .nr{grid-row:span 2;width:30px;height:23px;border-radius:50%;background:var(--yellow);transform:rotate(-22deg);margin-top:4px;display:grid;place-items:center;font-weight:800;font-size:13px;color:var(--navy)}
+.krok .nr span{transform:rotate(22deg)}
+.krok p{color:var(--muted);font-size:16px;line-height:1.55}
+.pas-strz{display:none}
+
+/* okazje (sekcja mocna) */
+.okazje{background:var(--deep);color:#fff;overflow:hidden}
+.okazje h2{color:#fff;max-width:820px}
+.okazje .glowa p{color:#C3CDE4}
+.nuty{position:relative;margin-top:clamp(48px,6vw,80px);height:300px}
+.nuty .pieciolinia{--ph:240px}
+.nuty .pieciolinia i{background:rgba(255,255,255,.16)}
+.nuty ul{list-style:none;margin:0;padding:0;position:absolute;inset:0;z-index:2}
+.nuty li{position:absolute;display:flex;align-items:center;gap:14px;font-size:clamp(22px,2.2vw,32px);font-weight:600;white-space:nowrap;transform:translateY(-50%)}
+.nuty li::before{content:"";width:30px;height:22px;border-radius:50%;background:var(--yellow);transform:rotate(-22deg);flex:none}
+.nuty li.puste::before{background:none;border:3px solid var(--yellow)}
+.nuty li:nth-child(1){left:0;top:calc(50% + 120px)}
+.nuty li:nth-child(2){left:16%;top:calc(50% + 60px)}
+.nuty li:nth-child(3){left:33%;top:50%}
+.nuty li:nth-child(4){left:47%;top:calc(50% - 60px)}
+.nuty li:nth-child(5){left:66%;top:calc(50% - 120px)}
+.nuty li:nth-child(6){left:66%;top:calc(50% + 60px)}
+.okazje .dopisek{margin-top:clamp(40px,5vw,64px);display:flex;flex-wrap:wrap;gap:22px 34px;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,.14);padding-top:36px}
+.okazje .dopisek p{font-size:20px;color:#E6EBF6;max-width:640px}
+
+/* film */
+.film .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(32px,6vw,96px);align-items:center}
+.film-txt p{margin-top:18px;font-size:clamp(17px,1.3vw,20px);color:var(--muted);max-width:540px}
+.film-txt ol{margin:28px 0 0;padding:0;list-style:none;display:grid;gap:12px}
+.film-txt li{display:flex;gap:14px;align-items:baseline;font-size:18px;color:var(--ink)}
+.film-txt li::before{content:"";width:13px;height:9px;border-radius:50%;background:var(--navy);transform:rotate(-22deg);flex:none;position:relative;top:-2px}
+.wideo{justify-self:center;position:relative;width:min(100%,360px);aspect-ratio:9/16;border-radius:26px;overflow:hidden;background:#24193f;box-shadow:0 30px 60px rgba(16,34,83,.25)}
+.wideo button{all:unset;cursor:pointer;position:absolute;inset:0;display:block}
+.wideo img{width:100%;height:100%;object-fit:cover}
+.wideo .play{position:absolute;left:50%;top:56%;width:96px;height:72px;border-radius:50%;background:var(--yellow);transform:translate(-50%,-50%) rotate(-22deg);box-shadow:0 12px 30px rgba(0,0,0,.35);display:grid;place-items:center;transition:transform .2s}
+.wideo button:hover .play{transform:translate(-50%,-50%) rotate(-22deg) scale(1.07)}
+.wideo .play::after{content:"";border-left:24px solid var(--navy);border-top:15px solid transparent;border-bottom:15px solid transparent;margin-left:6px;transform:rotate(22deg)}
+.wideo .czas{position:absolute;right:14px;bottom:14px;background:rgba(10,18,44,.82);color:#fff;font-size:14px;padding:5px 11px;border-radius:14px}
+.wideo video{width:100%;height:100%;display:block;background:#000}
+
+/* zamówienie */
+.zam .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,5vw,80px);align-items:start}
+.pakiet{border-radius:26px;background:var(--navy);color:#fff;padding:clamp(28px,3vw,44px);position:relative;overflow:hidden}
+.pakiet::after{content:"";position:absolute;right:-70px;top:-60px;width:230px;height:170px;border-radius:50%;background:var(--yellow);transform:rotate(-22deg)}
+.pakiet h3{color:#fff;font-size:22px;font-weight:600;position:relative;z-index:1}
+.cena{font-size:clamp(60px,6vw,84px);font-weight:800;line-height:1;margin-top:14px;letter-spacing:-.03em;position:relative;z-index:1}
+.cena small{font-size:.36em;font-weight:600;letter-spacing:0;margin-left:6px}
+.pakiet ul{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:14px}
+.pakiet li{display:flex;gap:14px;align-items:baseline;font-size:17px;color:#E6EBF6;line-height:1.5}
+.pakiet li::before{content:"";width:12px;height:9px;border-radius:50%;background:var(--yellow);transform:rotate(-22deg);flex:none;position:relative;top:-1px}
+.dodatki{margin-top:30px;padding-top:24px;border-top:1px solid rgba(255,255,255,.16)}
+.dodatki h4{margin:0;font-size:16px;font-weight:600;color:#fff}
+.dodatki p{margin-top:6px;font-size:15px;color:#C3CDE4}
+.zam .glowa{margin-bottom:34px}
+form{display:grid;gap:20px}
+.pole{display:grid;gap:8px}
+.pole label,fieldset legend{font-weight:600;font-size:16px;color:var(--navy);padding:0}
+.dwa{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
+input[type=text],input[type=email],select,textarea{width:100%;font:400 17px/1.4 Outfit,sans-serif;color:var(--ink);background:#fff;border:1.5px solid #CBD4E3;border-radius:14px;padding:14px 16px;transition:border-color .2s}
+input:focus,select:focus,textarea:focus{border-color:var(--blue);outline:none;box-shadow:0 0 0 3px rgba(33,73,186,.15)}
+textarea{min-height:130px;resize:vertical}
+fieldset{border:0;margin:0;padding:0;display:grid;gap:10px;min-width:0}
+.wybor{display:flex;flex-wrap:wrap;gap:10px}
+.wybor label{position:relative}
+.wybor input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.wybor span{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border:1.5px solid #CBD4E3;border-radius:24px;font-size:16px;font-weight:500;color:var(--ink);background:#fff;transition:all .15s}
+.wybor input:checked+span{background:var(--navy);border-color:var(--navy);color:#fff}
+.wybor input:focus-visible+span{outline:3px solid var(--blue);outline-offset:2px}
+.zgoda{display:flex;gap:12px;align-items:flex-start;font-size:15px;color:var(--muted);line-height:1.45}
+.zgoda input{width:20px;height:20px;margin:1px 0 0;accent-color:var(--navy);flex:none}
+.wynik{display:none;border-radius:14px;background:#EAF0FB;color:var(--navy);padding:16px 18px;font-size:16px}
+.wynik.widac{display:block}
+
+/* pytania */
+.faq .wrap{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(32px,5vw,80px);align-items:start}
+details{border-bottom:1px solid var(--line)}
+details:first-child{border-top:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:24px 48px 24px 0;font-size:clamp(18px,1.4vw,21px);font-weight:600;color:var(--navy);position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";position:absolute;right:6px;top:50%;width:18px;height:13px;border-radius:50%;border:2.5px solid var(--navy);transform:translateY(-50%) rotate(-22deg);transition:background .2s}
+details[open] summary::after{background:var(--yellow);border-color:var(--yellow)}
+details p{padding:0 0 24px;color:var(--muted);max-width:640px}
+.kontakt-mail{margin-top:26px;font-size:18px;color:var(--muted)}
+.kontakt-mail a{color:var(--navy);font-weight:700}
+
+/* stopka */
+.stopka{background:#0B1738;color:#C3CDE4;padding:56px 0 30px;font-size:15px}
+.stopka .wrap{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(2,minmax(0,1fr));gap:32px}
+.stopka .logo{color:#fff}
+.stopka p{margin-top:14px;max-width:340px}
+.stopka h4{margin:0 0 12px;color:#fff;font-size:16px;font-weight:600}
+.stopka nav a{display:block;text-decoration:none;padding:4px 0;color:#C3CDE4}
+.stopka nav a:hover{color:#fff}
+.stopka .dol{grid-column:1/-1;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;border-top:1px solid rgba(255,255,255,.12);padding-top:22px;margin-top:10px;font-size:14px}
+.wylinka-badge{display:inline-flex;align-items:center;gap:.4em;color:inherit;text-decoration:none;font-size:.875em;line-height:1;opacity:.85}
+.wylinka-badge:hover,.wylinka-badge:focus-visible{opacity:1}
+.wylinka-badge:focus-visible{outline:2px solid currentColor;outline-offset:3px;border-radius:2px}
+.wylinka-badge svg{width:18px;height:18px;flex:none;overflow:visible}
+.wylinka-badge b{font-weight:600}
+.wylinka-badge .wy-old{opacity:.45;transform-origin:40px 30px;transition:transform .32s cubic-bezier(.3,.7,.4,1),opacity .32s ease-out}
+.wylinka-badge .wy-pod{opacity:0;transition:opacity .2s ease-out .08s}
+.wylinka-badge:hover .wy-old,.wylinka-badge:focus-visible .wy-old{transform:translate(9px,7px) rotate(9deg);opacity:0}
+.wylinka-badge:hover .wy-pod,.wylinka-badge:focus-visible .wy-pod{opacity:1}
+@media (prefers-reduced-motion:reduce){.wylinka-badge .wy-old,.wylinka-badge .wy-pod{transition:none}.wylinka-badge:hover .wy-old,.wylinka-badge:focus-visible .wy-old{transform:none;opacity:.45}.wylinka-badge:hover .wy-pod,.wylinka-badge:focus-visible .wy-pod{opacity:0}}
+
+/* pasek dolny (telefon, po przewinięciu) */
+.mob{display:none}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:200;background:rgba(8,14,36,.94);display:none;align-items:center;justify-content:center;flex-direction:column;padding:56px 16px 24px}
+.lb.otw{display:flex}
+.lb figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:14px;max-height:100%}
+.lb img{max-width:min(720px,100%);max-height:calc(100svh - 150px);width:auto;height:auto;border-radius:14px;touch-action:pan-y}
+.lb figcaption{color:#fff;font-size:17px;text-align:center}
+.lb figcaption span{color:#9fb0d4;margin-left:10px}
+.lb button{position:absolute;border:0;background:rgba(255,255,255,.12);color:#fff;width:52px;height:52px;border-radius:50%;cursor:pointer;font:500 26px/1 Outfit,sans-serif;display:grid;place-items:center}
+.lb button:hover{background:rgba(255,255,255,.22)}
+.lb .zamknij{top:14px;right:14px}
+.lb .wstecz{left:18px;top:50%;transform:translateY(-50%)}
+.lb .dalej{right:18px;top:50%;transform:translateY(-50%)}
+
+/* szeroko */
+@media (min-width:1700px){
+  .wrap{width:min(1440px,100% - 112px)}
+  .hero h1{font-size:76px}
+}
+/* niskie okna komputera */
+@media (min-width:900px) and (max-height:760px){
+  .hero h1{font-size:clamp(38px,4vw,54px)}
+  .hero .lead{margin-top:18px}
+  .hero .cta{margin-top:26px}
+}
+
+/* tablet i telefon */
+@media (max-width:1020px){
+  .menu{gap:20px}
+  .menu a{font-size:15px}
+}
+@media (max-width:899px){
+  :root{--hh:58px}
+  .menu{display:none;position:fixed;top:var(--hh);left:0;right:0;bottom:0;background:#fff;flex-direction:column;gap:0;padding:12px 16px 32px;margin:0;overflow:auto}
+  .menu.otw{display:flex}
+  .menu a{font-size:24px;font-weight:600;color:var(--navy);padding:16px 4px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:14px}
+  .menu a::after{display:none}
+  .menu a::before{content:"";width:16px;height:12px;border-radius:50%;background:var(--yellow);transform:rotate(-22deg)}
+  .menu .btn-menu{display:flex;margin-top:24px;border:0;justify-content:center;background:var(--yellow);border-radius:30px;font-size:18px;min-height:56px}
+  .menu .btn-menu::before{background:var(--navy)}
+  .top .btn{display:none}
+  .burger{display:block}
+  .logo{font-size:21px}
+  .logo svg{width:27px;height:31px}
+
+  .hero{align-items:stretch}
+  .hero .wrap{display:flex;flex-direction:column;align-items:stretch;gap:0;padding:14px 0 22px;min-height:calc(100svh - var(--hh))}
+  .scena{order:-1;flex:1 1 0;min-height:170px;max-height:320px;height:auto;width:auto;aspect-ratio:auto;align-self:center;display:flex;justify-content:center}
+  .scena img{height:100%;width:auto;aspect-ratio:640/790}
+  .scena .laska{left:calc(50% + var(--sw,120px) - 7px)}
+  .hero .pieciolinia{left:0;top:calc(14px + var(--sh,150px));--ph:min(18svh,150px)}
+  .hero-txt{max-width:none;margin-top:clamp(14px,2.6svh,26px)}
+  .hero h1{font-size:clamp(29px,8.2vw,40px);line-height:1.08}
+  .hero .lead{margin-top:clamp(10px,1.8svh,16px);font-size:clamp(15.5px,4.1vw,17px);line-height:1.5}
+  .hero .cta{margin-top:clamp(24px,3.6svh,30px);gap:12px}
+  .scena .laska{height:44%;width:30%}
+  .hero .btn{width:100%;min-height:52px}
+  .hero .info{width:100%;text-align:center;font-size:14.5px}
+
+  .kroki{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;scrollbar-width:none;padding-bottom:6px;-webkit-overflow-scrolling:touch}
+  .kroki::-webkit-scrollbar{display:none}
+  .krok{flex:0 0 72%;scroll-snap-align:start;margin-top:0!important}
+  .melodia .pieciolinia{display:none}
+  .pas-strz{display:flex;justify-content:space-between;align-items:center;margin-top:18px}
+  .kropki{display:flex;gap:8px}
+  .kropki i{width:12px;height:9px;border-radius:50%;background:#C6CFDF;transform:rotate(-22deg);transition:background .2s}
+  .kropki i.akt{background:var(--navy)}
+  .pas-strz .licznik{font-size:15px;color:var(--muted)}
+
+  .nuty{height:auto}
+  .nuty .pieciolinia{display:none}
+  .nuty ul{position:static;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px 16px}
+  .nuty li{position:static;transform:none;font-size:20px;white-space:normal;line-height:1.25}
+  .nuty li::before{width:22px;height:16px}
+
+  .film .wrap,.zam .wrap,.faq .wrap{grid-template-columns:minmax(0,1fr)}
+  .wideo{width:min(100%,270px)}
+  .dwa{grid-template-columns:minmax(0,1fr)}
+
+  .stopka .wrap{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .stopka .marka{grid-column:1/-1}
+  .stopka{padding-bottom:96px}
+
+  .mob{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:40;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.97);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .25s}
+  .mob.widac{transform:none}
+  .mob .btn{width:100%;min-height:50px}
+  .lb .wstecz,.lb .dalej{top:auto;bottom:18px;transform:none}
+}
+@media (max-width:899px) and (min-resolution:2.8dppx){
+  .scena{max-height:290px}
+  .wideo{width:min(100%,246px)}
+}
+@media (max-width:899px) and (max-height:700px){
+  .hero h1{font-size:clamp(27px,7.6vw,34px)}
+  .hero .lead{font-size:15px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#tresc">Przejdź do treści</a>
+
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Podaruj Nutę, strona główna">
+      <svg viewBox="0 0 30 34" aria-hidden="true"><ellipse cx="11" cy="25.5" rx="9" ry="6.6" transform="rotate(-22 11 25.5)" fill="#FFD74D"/><path d="M18.6 23.2V3.2c0 0 1.2 4.6 5.4 7.2 3.2 2 3.6 5.6 2.2 8.2" fill="none" stroke="#102253" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Podaruj <b>Nutę</b></span>
+    </a>
+    <nav class="menu" id="menu" aria-label="Menu główne">
+      <a href="#jak">Jak to działa</a>
+      <a href="#okazje">Okazje</a>
+      <a href="#film">Film</a>
+      <a href="#zamow">Pakiet i zamówienie</a>
+      <a href="#pytania">Pytania</a>
+      <a class="btn-menu" href="#zamow">Stwórz piosenkę</a>
+    </nav>
+    <a class="btn" href="#zamow"><span class="glowka" aria-hidden="true"></span>Stwórz piosenkę</a>
+    <button class="burger" aria-label="Otwórz menu" aria-controls="menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="tresc">
+<section class="hero" aria-labelledby="h1">
+  <div class="pieciolinia" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="wrap">
+    <div class="hero-txt">
+      <h1 id="h1">Piosenka na zamówienie z&nbsp;Waszej historii</h1>
+      <p class="lead">Personalizowana piosenka na prezent: na urodziny, rocznicę, ślub albo po prostu „dziękuję”. Opowiedz, co chcesz przekazać, i&nbsp;wybierz brzmienie.</p>
+      <div class="cta">
+        <a class="btn" id="heroCta" href="#zamow"><span class="glowka" aria-hidden="true"></span>Zaprojektuj piosenkę</a>
+        <p class="info">Pakiet Start <b>49 zł</b> · gotowa do 24 godzin</p>
+      </div>
+    </div>
+    <div class="scena" id="scena">
+      <img src="img/nuta-640.webp" srcset="img/nuta-420.webp 420w, img/nuta-640.webp 640w" sizes="(max-width: 899px) 300px, 640px" width="640" height="790" alt="Syn przytula mamę po wysłuchaniu piosenki - kadr z filmu Podaruj Nutę" fetchpriority="high">
+      <svg class="laska" viewBox="0 0 100 200" preserveAspectRatio="none" aria-hidden="true"><path d="M4 200V4" stroke="#102253" stroke-width="7" vector-effect="non-scaling-stroke" fill="none" stroke-linecap="round"/><path d="M4 4c6 22 22 34 40 46 20 13 26 36 16 58" stroke="#102253" stroke-width="7" vector-effect="non-scaling-stroke" fill="none" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+</section>
+
+<section class="sek szara" id="jak" aria-labelledby="h-jak">
+  <div class="wrap">
+    <div class="glowa">
+      <h2 id="h-jak">Od kilku zdań do piosenki, którą chce się puścić jeszcze raz</h2>
+      <p>Ty wybierasz kierunek, my dbamy o to, żeby Wasza historia zabrzmiała osobiście.</p>
+    </div>
+    <div class="melodia">
+      <div class="pieciolinia" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+      <ol class="kroki" id="kroki">
+        <li class="krok">
+          <button type="button" data-lb="0" aria-label="Powiększ: Wspomnij, co Was łączy"><img src="img/wspomnij-440.webp" srcset="img/wspomnij-440.webp 440w, img/wspomnij-720.webp 720w" sizes="(max-width: 899px) 72vw, 25vw" width="720" height="850" alt="Mężczyzna w fotelu zapisuje wspomnienia w notesie" loading="lazy"></button>
+          <div class="opis"><span class="nr"><span>1</span></span><h3>Wspomnij, co Was łączy</h3><p>Imiona, wspomnienia, charakterystyczne zwroty i okazja. Możesz napisać krótko albo ze szczegółami.</p></div>
+        </li>
+        <li class="krok">
+          <button type="button" data-lb="1" aria-label="Powiększ: Opisz historię i wybierz klimat"><img src="img/opisz-440.webp" srcset="img/opisz-440.webp 440w, img/opisz-720.webp 720w" sizes="(max-width: 899px) 72vw, 25vw" width="720" height="850" alt="Mężczyzna przy laptopie opisuje historię do piosenki" loading="lazy"></button>
+          <div class="opis"><span class="nr"><span>2</span></span><h3>Opisz historię i wybierz klimat</h3><p>Ballada, pop, rock, taneczny rytm lub inny styl. Wskaż nastrój i rodzaj głosu.</p></div>
+        </li>
+        <li class="krok">
+          <button type="button" data-lb="2" aria-label="Powiększ: Wręcz prezent"><img src="img/wrecz-440.webp" srcset="img/wrecz-440.webp 440w, img/wrecz-720.webp 720w" sizes="(max-width: 899px) 72vw, 25vw" width="720" height="850" alt="Syn wręcza mamie prezent na urodziny" loading="lazy"></button>
+          <div class="opis"><span class="nr"><span>3</span></span><h3>Wręcz prezent stworzony dla tej osoby</h3><p>Każda piosenka jest pisana na zamówienie. Możesz dobrać okładkę, wersję alternatywną albo plik z tekstem.</p></div>
+        </li>
+        <li class="krok">
+          <button type="button" data-lb="3" aria-label="Powiększ: Ona słyszy Wasze wspólne chwile"><img src="img/slucha-440.webp" srcset="img/slucha-440.webp 440w, img/slucha-720.webp 720w" sizes="(max-width: 899px) 72vw, 25vw" width="720" height="850" alt="Wzruszona mama słucha piosenki o wspólnych chwilach" loading="lazy"></button>
+          <div class="opis"><span class="nr"><span>4</span></span><h3>Ona słyszy Wasze wspólne chwile</h3><p>Piosenka, która zostaje w sercu i do której wraca się jeszcze raz.</p></div>
+        </li>
+      </ol>
+      <div class="pas-strz" aria-hidden="true"><div class="kropki" id="kropki"><i class="akt"></i><i></i><i></i><i></i></div><span class="licznik" id="licznik">1 / 4</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sek okazje" id="okazje" aria-labelledby="h-okazje">
+  <div class="wrap">
+    <div class="glowa">
+      <h2 id="h-okazje">Nie trzeba wielkiego powodu, żeby podarować komuś własną piosenkę</h2>
+      <p>Może być wzruszająco, zabawnie albo z rozmachem. Najlepsze utwory zaczynają się od prawdziwych szczegółów, które znacie tylko Wy.</p>
+    </div>
+    <div class="nuty">
+      <div class="pieciolinia" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+      <ul>
+        <li>Urodziny</li>
+        <li>Rocznica</li>
+        <li>Ślub</li>
+        <li>Podziękowanie</li>
+        <li class="puste">Żart dla przyjaciela</li>
+        <li class="puste">Inny pomysł</li>
+      </ul>
+    </div>
+    <div class="dopisek">
+      <p>Masz już kogoś na myśli? Zacznij od historii, resztę ułożymy razem.</p>
+      <a class="btn" href="#zamow"><span class="glowka" aria-hidden="true"></span>Stwórz swoją piosenkę</a>
+    </div>
+  </div>
+</section>
+
+<section class="sek film" id="film" aria-labelledby="h-film">
+  <div class="wrap">
+    <div class="film-txt">
+      <h2 id="h-film">Zobacz w 30 sekund, jak powstaje taki prezent</h2>
+      <p>Krótki film Podaruj Nutę: od wspomnień zapisanych w notesie do chwili, w której bliska osoba słyszy swoją piosenkę.</p>
+      <ol>
+        <li>Wspomnij chwile, które Was łączą</li>
+        <li>Opisz swoją historię</li>
+        <li>Wręcz prezent stworzony dla niej</li>
+        <li>Ona słyszy Wasze wspólne chwile</li>
+      </ol>
+    </div>
+    <div class="wideo" id="wideo">
+      <button type="button" aria-label="Odtwórz film reklamowy Podaruj Nutę, 30 sekund">
+        <img src="img/film-okladka.webp" width="720" height="1280" alt="" loading="lazy">
+        <span class="play" aria-hidden="true"></span>
+        <span class="czas">0:30</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="sek szara zam" id="zamow" aria-labelledby="h-zam">
+  <div class="wrap">
+    <aside class="pakiet" aria-label="Pakiet Start">
+      <h3>Pakiet Start</h3>
+      <div class="cena">49 zł</div>
+      <ul>
+        <li>Tekst i klimat utworu na podstawie historii, którą wpiszesz</li>
+        <li>Wybór stylu, nastroju i rodzaju głosu</li>
+        <li>Gotowa piosenka do 24 godzin od opłacenia zamówienia</li>
+        <li>Płatność online przez 1koszyk / Autopay</li>
+      </ul>
+      <div class="dodatki">
+        <h4>Dodatki, jeśli chcesz</h4>
+        <p>Okładka, wersja alternatywna, plik z tekstem. Wyceniane osobno, nie są doliczane automatycznie.</p>
+      </div>
+    </aside>
+    <div>
+      <div class="glowa">
+        <h2 id="h-zam">Opowiedz nam o kimś</h2>
+        <p>Kilka zdań wystarczy. Im więcej prawdziwych szczegółów, tym bardziej osobista piosenka.</p>
+      </div>
+      <form id="form" novalidate>
+        <div class="dwa">
+          <div class="pole"><label for="f-kto">Dla kogo jest piosenka?</label><input id="f-kto" type="text" placeholder="np. dla mamy, Ani" autocomplete="off"></div>
+          <div class="pole"><label for="f-okazja">Okazja</label><select id="f-okazja"><option>Urodziny</option><option>Rocznica</option><option>Ślub</option><option>Podziękowanie</option><option>Żart dla przyjaciela</option><option>Inny pomysł</option></select></div>
+        </div>
+        <div class="pole"><label for="f-hist">Wasza historia</label><textarea id="f-hist" placeholder="Imiona, wspólne chwile, ulubione powiedzonka..."></textarea></div>
+        <fieldset><legend>Klimat</legend>
+          <div class="wybor">
+            <label><input type="radio" name="klimat" checked><span>Ballada</span></label>
+            <label><input type="radio" name="klimat"><span>Pop</span></label>
+            <label><input type="radio" name="klimat"><span>Rock</span></label>
+            <label><input type="radio" name="klimat"><span>Taneczny</span></label>
+            <label><input type="radio" name="klimat"><span>Inny</span></label>
+          </div>
+        </fieldset>
+        <fieldset><legend>Głos</legend>
+          <div class="wybor">
+            <label><input type="radio" name="glos" checked><span>Kobiecy</span></label>
+            <label><input type="radio" name="glos"><span>Męski</span></label>
+            <label><input type="radio" name="glos"><span>Bez znaczenia</span></label>
+          </div>
+        </fieldset>
+        <div class="pole"><label for="f-mail">Twój e-mail (tu wyślemy piosenkę)</label><input id="f-mail" type="email" placeholder="adres@poczta.pl" autocomplete="off"></div>
+        <label class="zgoda"><input type="checkbox" id="f-zgoda">Akceptuję regulamin i politykę prywatności.</label>
+        <div><button class="btn navy" type="submit"><span class="glowka" aria-hidden="true"></span>Przejdź do płatności · 49 zł</button></div>
+        <p class="wynik" id="wynik" role="status">To podgląd strony, formularz nie wysyła danych. Na docelowej stronie w tym miejscu przejdziesz do płatności.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="sek faq" id="pytania" aria-labelledby="h-faq">
+  <div class="wrap">
+    <div class="glowa">
+      <h2 id="h-faq">Pytania przed zamówieniem</h2>
+      <p>Najważniejsze informacje w jednym miejscu.</p>
+      <p class="kontakt-mail">Inne pytanie? Napisz: <a href="mailto:kontakt@podarujnute.pl">kontakt@podarujnute.pl</a></p>
+    </div>
+    <div>
+      <details open><summary>Jak szybko otrzymam piosenkę?</summary><p>Standardowy czas realizacji to do 24 godzin od poprawnie opłaconego zamówienia.</p></details>
+      <details><summary>Czy piosenka jest personalizowana?</summary><p>Tak. Tekst i klimat utworu powstają na podstawie historii, którą wpiszesz w formularzu.</p></details>
+      <details><summary>Jak działa płatność?</summary><p>Po wypełnieniu formularza przechodzisz do 1koszyk / Autopay i opłacasz wybrany pakiet online.</p></details>
+      <details><summary>Czy dodatki są w cenie pakietu?</summary><p>Nie. Dodatki są wyceniane osobno i nie są doliczane automatycznie do ceny pakietu.</p></details>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="stopka">
+  <div class="wrap">
+    <div class="marka">
+      <a class="logo" href="#top"><svg viewBox="0 0 30 34" aria-hidden="true"><ellipse cx="11" cy="25.5" rx="9" ry="6.6" transform="rotate(-22 11 25.5)" fill="#FFD74D"/><path d="M18.6 23.2V3.2c0 0 1.2 4.6 5.4 7.2 3.2 2 3.6 5.6 2.2 8.2" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Podaruj <b>Nutę</b></span></a>
+      <p>Twoja historia zamieniona w piosenkę.</p>
+      <p><a href="mailto:kontakt@podarujnute.pl">kontakt@podarujnute.pl</a></p>
+    </div>
+    <nav aria-label="Na stronie"><h4>Na stronie</h4><a href="#jak">Jak to działa</a><a href="#okazje">Okazje</a><a href="#film">Film</a><a href="#zamow">Pakiet i zamówienie</a></nav>
+    <nav aria-label="Informacje"><h4>Informacje</h4><a href="#pytania">Pytania</a><a href="#pytania">Regulamin</a><a href="#pytania">Polityka prywatności</a><a href="#pytania">Reklamacje</a></nav>
+    <div class="dol">
+      <span>© 2026 Podaruj Nutę</span>
+      <a class="wylinka-badge" href="https://wylinka.pl/?utm_source=podarujnute.pl&amp;utm_medium=stopka&amp;utm_campaign=wykonanie" rel="noopener" title="Strona wykonana przez Wylinka"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false" fill="currentColor"><path d="M9.8 22.8l-1.2-7.9 2.2-3.7 15.5 4.6-.5 1.5-7.2 5.5 4.7 15.6 5-15.6 7 0 4.1 12.7-4.2-.9-2.6 1.8-.8-2.2-5.3 15.6-4.3 0 .4 .2-2.1 2.8-1.3-1.1 1.1-1.4-3.1 .2-.1-1.7 2.2-.1-5.7-16.5-4.8 .6-.8 3.1 0 .5-.3 .5 .8 2.2-1.6 .5-.4-1.3-.8 1.6-1.5-.8 .8-1.6-1.4 .6-.6-1.6 2.3-.8 .2-.4 1.3-4.8 5.9-.8-2.4-6.9zM15.2 13.7l-.1-.4-.4 .8-.1 .8 .1 1 .1 .4 .3 .7 .3-.9 .1-.7 0-.8z"/><path class="wy-pod" d="M37.1 49.8l-4.5-13.3 2.6-1.8 4.2 .9 .9 2.8 3-9.7 0-.5 .1-.8 3.2-8.4 .5-1 .6-1 .9-1.1 1.3-1 1.1-.7 1.4-.5 1.4-.3 .7 0 .9 0 1.2 .3 1.4 .6 .8 .5 .7 .7 .6 .7 .5 .9 .3 .9 .1 .9 0 .8-.2 .9-.5 .9-.5 .6-.7 .5-.7 .3-.1-.1 0-.1 .5-.5 .3-.7 .2-.5 0-.6-.1-.6-.3-.7-.4-.5-.4-.4-.5-.3-.6-.3-.7 0-.7 .1-.6 .1-.5 .4-.5 .5-.3 .5-.2 .7-.1 1.5-1.4 5.1-.8 3.3-.3 .7-.5 .7-6 17.5 1.9 .1-.1 1.7-3.1-.2 1.1 1.4-1.3 1.1-2.1-2.8 .4-.2z"/><path class="wy-old" d="M40.8 50l.4-.2-4.1 0-4.2-12.5 2.5-1.7 4.3 .9 .6 1.9 .6-1.6 0-.3 2.4-7.8 0-.5 .1-.8 3.2-8.4 .4-.8 .6-.9 .9-1.2 .9-.9 1.3-.8 1.4-.6 1.2-.3 1.4-.1 1.3 .1 .6 .2 .8 .3 1.1 .6 .9 .7 .7 .9 .5 .9 .3 .9 .1 1.1-.1 .9-.3 .9-.4 .7-.6 .7-.6 .4-.6 .2-.1-.1 0-.1 .5-.5 .3-.7 .2-.5 0-.5-.1-.6-.2-.6-.3-.5-.4-.5-.5-.3-.6-.3-.7-.1-.6 0-.6 .1-.6 .3-.6 .5-.3 .4-.2 .5-.1 .5-.1 1.5-1.4 5.1-.8 3.3-.3 .7-.5 .7-6 17.5 1.9 .1-.1 1.7-3.1-.2 1.1 1.4-1.3 1.1zM49.6 17.1l.6 1.7-1.5 1.9 .4 .4 1.8-2.1-.7-2.1zM48.1 28.3l.5 1.8-1.7 1.8 .4 .4 1.9-2-.6-2.2zM37.9 41.7l1.7-1.5-.4-.4-1.7 1.4zM42.6 38.7l-1.5 2.8 1.1 2-1.3 2.6 .5 .2 1.5-2.8-1.1-2 1.4-2.5z"/></svg><span>wykonanie: <b>Wylinka</b></span></a>
+    </div>
+  </div>
+</footer>
+
+<div class="mob" id="mob"><a class="btn" href="#zamow"><span class="glowka" aria-hidden="true"></span>Stwórz piosenkę · 49 zł</a></div>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Powiększone zdjęcie">
+  <button class="zamknij" type="button" aria-label="Zamknij">×</button>
+  <button class="wstecz" type="button" aria-label="Poprzednie">‹</button>
+  <figure><img id="lbImg" src="" alt=""><figcaption id="lbCap"></figcaption></figure>
+  <button class="dalej" type="button" aria-label="Następne">›</button>
+</div>
+
+<script>
+(function(){
+  var top=document.getElementById('top'),burger=document.querySelector('.burger'),menu=document.getElementById('menu');
+  function zamknijMenu(){menu.classList.remove('otw');burger.setAttribute('aria-expanded','false');burger.setAttribute('aria-label','Otwórz menu');document.body.style.overflow=''}
+  burger.addEventListener('click',function(){var o=menu.classList.toggle('otw');burger.setAttribute('aria-expanded',o);burger.setAttribute('aria-label',o?'Zamknij menu':'Otwórz menu');document.body.style.overflow=o?'hidden':''});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',zamknijMenu)});
+  addEventListener('keydown',function(e){if(e.key==='Escape')zamknijMenu()});
+  addEventListener('scroll',function(){top.classList.toggle('cien',scrollY>8)},{passive:true});
+
+  /* laska nuty i pięciolinia na telefonie: liczone z realnego zdjęcia */
+  var sc=document.getElementById('scena'),im=sc.querySelector('img');
+  function uloz(){
+    if(innerWidth<900){var r=im.getBoundingClientRect(),s=sc.getBoundingClientRect();sc.style.setProperty('--sw',(r.width/2)+'px');document.querySelector('.hero').style.setProperty('--sh',(r.height/2)+'px')}
+  }
+  addEventListener('resize',uloz);if(im.complete)uloz();else im.addEventListener('load',uloz);
+
+  /* aktywna pozycja menu */
+  var linki=[].slice.call(document.querySelectorAll('.menu a:not(.btn-menu)'));
+  var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){linki.forEach(function(a){a.classList.toggle('akt',a.getAttribute('href')==='#'+x.target.id)})}})},{rootMargin:'-45% 0px -50% 0px'});
+  ['jak','okazje','film','zamow','pytania'].forEach(function(id){io.observe(document.getElementById(id))});
+
+  /* pasek dolny po minięciu przycisku z pierwszego ekranu */
+  var mob=document.getElementById('mob'),cta=document.getElementById('heroCta'),zam=document.getElementById('zamow');
+  var widacCta=true,widacZam=false;
+  function pas(){mob.classList.toggle('widac',!widacCta&&!widacZam)}
+  new IntersectionObserver(function(e){widacCta=e[0].isIntersecting||e[0].boundingClientRect.top>0;pas()}).observe(cta);
+  new IntersectionObserver(function(e){widacZam=e[0].isIntersecting;pas()},{rootMargin:'0px 0px -30% 0px'}).observe(zam);
+
+  /* kroki: przewijanie palcem/myszą + kropki */
+  var kr=document.getElementById('kroki'),kropki=[].slice.call(document.querySelectorAll('#kropki i')),lic=document.getElementById('licznik');
+  kr.addEventListener('scroll',function(){var w=kr.firstElementChild.getBoundingClientRect().width+14,i=Math.min(3,Math.round(kr.scrollLeft/w));kropki.forEach(function(k,j){k.classList.toggle('akt',j===i)});lic.textContent=(i+1)+' / 4'},{passive:true});
+  var drag=false,sx=0,sl=0,moved=false;
+  kr.addEventListener('pointerdown',function(e){if(e.pointerType!=='mouse'||innerWidth>=900)return;drag=true;moved=false;sx=e.clientX;sl=kr.scrollLeft;kr.style.scrollSnapType='none'});
+  addEventListener('pointermove',function(e){if(!drag)return;var d=e.clientX-sx;if(Math.abs(d)>5)moved=true;kr.scrollLeft=sl-d});
+  addEventListener('pointerup',function(){if(!drag)return;drag=false;kr.style.scrollSnapType=''});
+  kr.addEventListener('click',function(e){if(moved){e.preventDefault();e.stopPropagation();moved=false}},true);
+
+  /* lightbox */
+  var zdj=[['wspomnij','Wspomnij, co Was łączy'],['opisz','Opisz historię i wybierz klimat'],['wrecz','Wręcz prezent stworzony dla tej osoby'],['slucha','Ona słyszy Wasze wspólne chwile']];
+  var lb=document.getElementById('lb'),li=document.getElementById('lbImg'),lc=document.getElementById('lbCap'),cur=0,ostatni=null;
+  function pokaz(i){cur=(i+zdj.length)%zdj.length;li.src='img/'+zdj[cur][0]+'-720.webp';li.alt=zdj[cur][1];lc.innerHTML=zdj[cur][1]+'<span>'+(cur+1)+' / '+zdj.length+'</span>'}
+  document.querySelectorAll('[data-lb]').forEach(function(b){b.addEventListener('click',function(){ostatni=b;pokaz(+b.dataset.lb);lb.classList.add('otw');document.body.style.overflow='hidden';lb.querySelector('.zamknij').focus()})});
+  function zamknij(){lb.classList.remove('otw');document.body.style.overflow='';if(ostatni)ostatni.focus()}
+  lb.querySelector('.zamknij').addEventListener('click',zamknij);
+  lb.querySelector('.wstecz').addEventListener('click',function(){pokaz(cur-1)});
+  lb.querySelector('.dalej').addEventListener('click',function(){pokaz(cur+1)});
+  lb.addEventListener('click',function(e){if(e.target===lb)zamknij()});
+  addEventListener('keydown',function(e){if(!lb.classList.contains('otw'))return;if(e.key==='Escape')zamknij();if(e.key==='ArrowLeft')pokaz(cur-1);if(e.key==='ArrowRight')pokaz(cur+1)});
+  var tx=0;li.addEventListener('touchstart',function(e){tx=e.touches[0].clientX},{passive:true});
+  li.addEventListener('touchend',function(e){var d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>40)pokaz(cur+(d<0?1:-1))});
+
+  /* film: fasada, odtwarzacz dopiero po kliknięciu */
+  var wb=document.querySelector('#wideo button');
+  wb.addEventListener('click',function(){var v=document.createElement('video');v.src='PodarujNute-reklama-30s.mp4';v.controls=true;v.playsInline=true;v.autoplay=true;v.setAttribute('playsinline','');wb.replaceWith(v);v.play().catch(function(){})});
+
+  /* formularz pokazowy */
+  document.getElementById('form').addEventListener('submit',function(e){e.preventDefault();document.getElementById('wynik').classList.add('widac')});
+})();
+</script>
+</body>
+</html>
